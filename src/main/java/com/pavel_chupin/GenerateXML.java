@@ -73,12 +73,14 @@ public class GenerateXML implements Serializable {
             //long time = System.currentTimeMillis();
             //System.out.println(time);
             dbService.initData(n);
-            //System.out.println(System.currentTimeMillis() - time);
+            //time = System.currentTimeMillis() - time;
 
-            //time = System.currentTimeMillis();
+            //long time_one = System.currentTimeMillis();
             //System.out.println(time);
             //dbService.initDataMass(n);
             //System.out.println(System.currentTimeMillis() - time);
+            //time_one = System.currentTimeMillis() - time_one;
+            //System.out.println(time - time_one);
 
             //Получаем список объектов в таблице
             List<Data> dataList = dbService.selectData();

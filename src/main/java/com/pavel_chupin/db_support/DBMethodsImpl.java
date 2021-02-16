@@ -32,8 +32,9 @@ public class DBMethodsImpl implements DBMethods {
         try (Statement st = connection.createStatement()) {
             int rowcount = st.executeUpdate("delete from test");
             for (int i = 0; i < n; i++) {
-                st.executeUpdate(String.format("insert test (field) values(%d)", i + 1));
+                st.addBatch(String.format("insert test (field) values(%d)", i + 1));
             }
+            st.executeBatch();
             connection.commit();
         } catch (SQLException e) {
             connection.rollback();
